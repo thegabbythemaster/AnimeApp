@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import CoreData
 
 class AnimeDetailsViewController: UIViewController {
 
@@ -15,7 +16,15 @@ class AnimeDetailsViewController: UIViewController {
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var synopsislabel: UILabel!
     
+    @IBAction func AddFav(_ sender: Any) {
+        guard let mainView = navigationController?.parent?.view
+        else { return }
+        let hudView = HudView.hud(inView: mainView, animated: true)
+        hudView.text = "Added to favorites"
+    }
     var anime: [String:Any]!
+    var managedObjectContext: NSManagedObjectContext!
+    var date = Date()
     override func viewDidLoad() {
         super.viewDidLoad()
 

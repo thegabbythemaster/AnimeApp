@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import CoreData
 
 class AnimesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{ //deleted UISearchBarDelegate
     
@@ -16,6 +17,7 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var animes = [[String:Any]]()
     var numAnime = 0
+    var managedObjectContext: NSManagedObjectContext!
     var filteredData: [[String:Any]] = [] //for search bar
 
     override func viewDidLoad() {
@@ -26,6 +28,9 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
         filteredData = animes //search bar
         loadAnime()
     }
+
+
+ 
     func loadAnime(){
         let url = URL(string: "https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=\(numAnime)")!
         print(url)
@@ -107,6 +112,13 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
         detailsViewController.anime = anime
         
         tableView.deselectRow(at: indexPath, animated: true)
+        //MARK: for fav
+         if segue.identifier == "TagFav" {
+            let controller = segue.destination as! AnimeDetailsViewController
+            controller.managedObjectContext = managedObjectContext
+
+          }
+
     }
     //MARK: search bar section HELP NEEDED HERE
     

@@ -17,8 +17,11 @@
 		42382E1425E85ABD00DB8929 /* AnimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42382E1325E85ABD00DB8929 /* AnimeAppUITests.swift */; };
 		42382E2825E85B9800DB8929 /* AnimesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42382E2725E85B9800DB8929 /* AnimesViewController.swift */; };
 		424A62D22603C7EC00E253A4 /* FavAnimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A62D12603C7EC00E253A4 /* FavAnimeViewController.swift */; };
+		424A62D82603DC2A00E253A4 /* MyFav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 424A62D62603DC2A00E253A4 /* MyFav.xcdatamodeld */; };
+		424A62DD2603DF1700E253A4 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A62DC2603DF1700E253A4 /* FavTableViewCell.swift */; };
 		42A2BC2225EEA44500EE783E /* AnimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2BC2125EEA44500EE783E /* AnimeCell.swift */; };
 		42B4B67D25F69B3C005D0994 /* AnimeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4B67C25F69B3C005D0994 /* AnimeDetailsViewController.swift */; };
+		42CD72F62603FD7F00E02E8C /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CD72F52603FD7F00E02E8C /* HudView.swift */; };
 		5776BAE7702050F368B6F9F9 /* Pods_AnimeApp_AnimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3960E888F9F6D6431EAED9 /* Pods_AnimeApp_AnimeAppUITests.framework */; };
 		80E88BEF31DBCC33A85B4D9F /* Pods_AnimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D182BBBD07B62E93D679663 /* Pods_AnimeApp.framework */; };
 /* End PBXBuildFile section */
@@ -58,8 +61,11 @@
 		42382E1525E85ABD00DB8929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42382E2725E85B9800DB8929 /* AnimesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimesViewController.swift; sourceTree = "<group>"; };
 		424A62D12603C7EC00E253A4 /* FavAnimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavAnimeViewController.swift; sourceTree = "<group>"; };
+		424A62D72603DC2A00E253A4 /* MyFav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFav.xcdatamodel; sourceTree = "<group>"; };
+		424A62DC2603DF1700E253A4 /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		42A2BC2125EEA44500EE783E /* AnimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCell.swift; sourceTree = "<group>"; };
 		42B4B67C25F69B3C005D0994 /* AnimeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsViewController.swift; sourceTree = "<group>"; };
+		42CD72F52603FD7F00E02E8C /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		6D182BBBD07B62E93D679663 /* Pods_AnimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860DA3EF0B7F009D7E33FC91 /* Pods-AnimeApp-AnimeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeApp-AnimeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimeApp-AnimeAppUITests/Pods-AnimeApp-AnimeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		970980E272342FDDDCAB7BDE /* Pods-AnimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeApp.release.xcconfig"; path = "Target Support Files/Pods-AnimeApp/Pods-AnimeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 				42A2BC2125EEA44500EE783E /* AnimeCell.swift */,
 				42B4B67C25F69B3C005D0994 /* AnimeDetailsViewController.swift */,
 				424A62D12603C7EC00E253A4 /* FavAnimeViewController.swift */,
+				424A62D62603DC2A00E253A4 /* MyFav.xcdatamodeld */,
+				424A62DC2603DF1700E253A4 /* FavTableViewCell.swift */,
+				42CD72F52603FD7F00E02E8C /* HudView.swift */,
 			);
 			path = AnimeApp;
 			sourceTree = "<group>";
@@ -415,12 +424,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424A62D82603DC2A00E253A4 /* MyFav.xcdatamodeld in Sources */,
+				424A62DD2603DF1700E253A4 /* FavTableViewCell.swift in Sources */,
 				42A2BC2225EEA44500EE783E /* AnimeCell.swift in Sources */,
 				42382E2825E85B9800DB8929 /* AnimesViewController.swift in Sources */,
 				42B4B67D25F69B3C005D0994 /* AnimeDetailsViewController.swift in Sources */,
 				42382DF225E85ABC00DB8929 /* AppDelegate.swift in Sources */,
 				42382DF425E85ABC00DB8929 /* SceneDelegate.swift in Sources */,
 				424A62D22603C7EC00E253A4 /* FavAnimeViewController.swift in Sources */,
+				42CD72F62603FD7F00E02E8C /* HudView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +765,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		424A62D62603DC2A00E253A4 /* MyFav.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				424A62D72603DC2A00E253A4 /* MyFav.xcdatamodel */,
+			);
+			currentVersion = 424A62D72603DC2A00E253A4 /* MyFav.xcdatamodel */;
+			path = MyFav.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 42382DE625E85ABC00DB8929 /* Project object */;
 }
