@@ -151,6 +151,7 @@ extension AnimesViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("The search is: \(searchBar.text!)")
     }
+
 }
 //make a sep. view controller that has the categories where the user selects it, makes a new api call, parse the new response and itll display on the home screen when the user goes back
 //bookmark tab have a bookmark button at the synosipis page.

@@ -2,7 +2,7 @@
 //  Favorite+CoreDataClass.swift
 //  
 //
-//  Created by Gabby Gonzalez on 3/18/21.
+//  Created by Gabby Gonzalez on 3/20/21.
 //
 //
 

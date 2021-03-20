@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     lazy var managedObjectContext = persistentContainer.viewContext
+    
  
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,options connectionOptions: UIScene.ConnectionOptions){
@@ -51,6 +52,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
       let container = NSPersistentContainer(name: "MyFav")
       container.loadPersistentStores {_, error in
@@ -60,7 +62,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       }
       return container
     }()
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

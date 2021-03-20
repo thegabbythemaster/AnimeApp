@@ -15,16 +15,16 @@ class AnimeDetailsViewController: UIViewController {
     @IBOutlet weak var posterview: UIImageView!
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var synopsislabel: UILabel!
+    var anime: [String:Any]!
+    var managedObjectContext: NSManagedObjectContext!
     
     @IBAction func AddFav(_ sender: Any) {
         guard let mainView = navigationController?.parent?.view
         else { return }
         let hudView = HudView.hud(inView: mainView, animated: true)
-        hudView.text = "Added to favorites"
+        hudView.text = "Added"
     }
-    var anime: [String:Any]!
-    var managedObjectContext: NSManagedObjectContext!
-    var date = Date()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
