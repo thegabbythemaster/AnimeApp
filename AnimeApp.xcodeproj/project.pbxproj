@@ -20,6 +20,7 @@
 		424A62D82603DC2A00E253A4 /* MyFav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 424A62D62603DC2A00E253A4 /* MyFav.xcdatamodeld */; };
 		424A62DD2603DF1700E253A4 /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424A62DC2603DF1700E253A4 /* FavTableViewCell.swift */; };
 		42A2BC2225EEA44500EE783E /* AnimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2BC2125EEA44500EE783E /* AnimeCell.swift */; };
+		42AF60E2260A71E100CCF210 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF60E1260A71E100CCF210 /* CoreDataHelper.swift */; };
 		42B1CA6A260686C700372216 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1CA69260686C700372216 /* Favorite+CoreDataProperties.swift */; };
 		42B1CA6F260686CF00372216 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1CA6E260686CF00372216 /* Favorite+CoreDataClass.swift */; };
 		42B1CA74260689FF00372216 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B1CA73260689FF00372216 /* Functions.swift */; };
@@ -67,6 +68,7 @@
 		424A62D72603DC2A00E253A4 /* MyFav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFav.xcdatamodel; sourceTree = "<group>"; };
 		424A62DC2603DF1700E253A4 /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		42A2BC2125EEA44500EE783E /* AnimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCell.swift; sourceTree = "<group>"; };
+		42AF60E1260A71E100CCF210 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		42B1CA69260686C700372216 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Favorite+CoreDataProperties.swift"; path = "AnimeApp/Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42B1CA6E260686CF00372216 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Favorite+CoreDataClass.swift"; path = "/Users/gabbygonzalez/Documents/AnimeApp/Favorite+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		42B1CA73260689FF00372216 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				424A62DC2603DF1700E253A4 /* FavTableViewCell.swift */,
 				42CD72F52603FD7F00E02E8C /* HudView.swift */,
 				42B1CA73260689FF00372216 /* Functions.swift */,
+				42AF60E1260A71E100CCF210 /* CoreDataHelper.swift */,
 			);
 			path = AnimeApp;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				42382E2825E85B9800DB8929 /* AnimesViewController.swift in Sources */,
 				42B4B67D25F69B3C005D0994 /* AnimeDetailsViewController.swift in Sources */,
 				42382DF225E85ABC00DB8929 /* AppDelegate.swift in Sources */,
+				42AF60E2260A71E100CCF210 /* CoreDataHelper.swift in Sources */,
 				42382DF425E85ABC00DB8929 /* SceneDelegate.swift in Sources */,
 				424A62D22603C7EC00E253A4 /* FavAnimeViewController.swift in Sources */,
 				42CD72F62603FD7F00E02E8C /* HudView.swift in Sources */,

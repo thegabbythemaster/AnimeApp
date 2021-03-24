@@ -16,16 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="bJ3-Fl-w7e">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnimeCell" rowHeight="161" id="47L-eE-EPz" customClass="AnimeCell" customModule="AnimeApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="161"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="161"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="47L-eE-EPz" id="zIJ-1k-zxW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
@@ -77,7 +70,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Animes" id="8Hc-xn-nue"/>
                     <connections>
-                        <outlet property="searchBar" destination="bJ3-Fl-w7e" id="VLU-OW-SRP"/>
                         <outlet property="tableView" destination="k7p-Ll-bsX" id="R7u-oe-mfn"/>
                     </connections>
                 </viewController>
@@ -124,7 +116,7 @@
                                 </state>
                                 <connections>
                                     <action selector="AddFav:" destination="7yj-Jk-6qa" eventType="touchUpInside" id="85Y-KA-FmJ"/>
-                                    <segue destination="cdy-Mh-jXv" kind="show" identifier="TagFav" id="QNs-wz-gby"/>
+                                    <segue destination="cdy-Mh-jXv" kind="show" identifier="TagFav" id="YWr-hB-eo2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -160,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOu-EK-TaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-494" y="1668"/>
+            <point key="canvasLocation" x="-546" y="1662"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Eba-vY-4v9">
@@ -178,7 +170,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCv-A8-yiT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1377" y="-602"/>
+            <point key="canvasLocation" x="-1261" y="-619"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="M3A-SQ-vgZ">
@@ -273,7 +265,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="QNs-wz-gby"/>
+        <segue reference="G60-3Z-d9i"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -18,11 +18,17 @@ class AnimeDetailsViewController: UIViewController {
     var anime: [String:Any]!
     var managedObjectContext: NSManagedObjectContext!
     
+    
     @IBAction func AddFav(_ sender: Any) {
-        guard let mainView = navigationController?.parent?.view
-        else { return }
+        guard let mainView = navigationController?.parent?.view else { return }
         let hudView = HudView.hud(inView: mainView, animated: true)
         hudView.text = "Added"
+          afterDelay(2) {
+            hudView.hide()
+          }
+        //MARK: poster image help
+        CoreDataHelper.save(name: titlelabel.text!, synopsis: synopsislabel.text!)
+
     }
    
     override func viewDidLoad() {
@@ -51,7 +57,7 @@ class AnimeDetailsViewController: UIViewController {
         
     }
     
-
+  
     /*
     // MARK: - Navigation
 

@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 extension Favorite{
 
@@ -16,7 +16,7 @@ extension Favorite{
         return NSFetchRequest<Favorite>(entityName: "Favorite")
     }
 
-    @NSManaged public var summary: String?
     @NSManaged public var title: String?
-
+    @NSManaged public var synopsis: String?
+    @NSManaged public var poster: String?
 }

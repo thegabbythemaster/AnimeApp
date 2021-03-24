@@ -13,19 +13,14 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet var tableView: UITableView!
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     var animes = [[String:Any]]()
     var numAnime = 0
     var managedObjectContext: NSManagedObjectContext!
-    var filteredData: [[String:Any]] = [] //for search bar
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        searchBar.delegate = self //search bar
-        filteredData = animes //search bar
         loadAnime()
     }
 
@@ -114,42 +109,11 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
         //MARK: for fav
          if segue.identifier == "TagFav" {
-            let controller = segue.destination as! AnimeDetailsViewController
+            let controller = segue.destination as! FavAnimeViewController
             controller.managedObjectContext = managedObjectContext
 
           }
 
-    }
-    //MARK: search bar section HELP NEEDED HERE
-    
-    // This method updates filteredData based on the text in the Search Box
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        // When there is no text, filteredData is the same as the original data
-//        // When user has entered text into the search box
-//        // Use the filter method to iterate over all items in the data array
-//        // For each item, return true if the item should be included and false if the
-//        // item should NOT be included
-//
-//        //MARK: fourth app first chapter
-//        filteredData = searchText.isEmpty ? animes : animes.filter { (item: String) -> Bool in
-//            // If dataItem matches the searchText, return true to include it
-//            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-//        }
-//
-//        tableView.reloadData()
-//    }
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-            self.searchBar.showsCancelButton = true
-    }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-            searchBar.showsCancelButton = false
-            searchBar.text = ""
-            searchBar.resignFirstResponder()
-    }
-}
-extension AnimesViewController: UISearchBarDelegate{
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("The search is: \(searchBar.text!)")
     }
 
 }
