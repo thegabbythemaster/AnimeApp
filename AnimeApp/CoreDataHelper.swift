@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 struct CoreDataHelper {
-    static func save(name: String, synopsis: String) { //need to add third arg. poster: String
+    static func save(name: String, synopsis: String, poster: Data) { //need to add third arg. poster: String
       guard let appDelegate =
         UIApplication.shared.delegate as? AppDelegate else {
         return
@@ -27,7 +27,7 @@ struct CoreDataHelper {
       // 3
       person.setValue(name, forKeyPath: "title")
       person.setValue(synopsis, forKeyPath: "synopsis")
-      person.setValue(synopsis, forKeyPath: "poster")
+      person.setValue(poster, forKeyPath: "poster")
       // 4
       do {
         try managedContext.save()

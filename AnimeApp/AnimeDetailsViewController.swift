@@ -27,7 +27,11 @@ class AnimeDetailsViewController: UIViewController {
             hudView.hide()
           }
         //MARK: poster image help
-        CoreDataHelper.save(name: titlelabel.text!, synopsis: synopsislabel.text!)
+        let att = anime["attributes"] as! NSDictionary
+        let poster = att["posterImage"] as! NSDictionary
+        let posterimage = poster["medium"] as! String
+        let posterUrl = URL(string: posterimage)!
+        CoreDataHelper.save(name: titlelabel.text!, synopsis: synopsislabel.text!,poster: posterview.af.setImage(withURL: posterUrl))
 
     }
    
