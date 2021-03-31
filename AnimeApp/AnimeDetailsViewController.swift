@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import CoreData
 
 class AnimeDetailsViewController: UIViewController {
 
@@ -14,16 +15,32 @@ class AnimeDetailsViewController: UIViewController {
     @IBOutlet weak var posterview: UIImageView!
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var synopsislabel: UILabel!
-    
     var anime: [String:Any]!
+    var managedObjectContext: NSManagedObjectContext!
+    
+    
+    @IBAction func AddFav(_ sender: Any) {
+        guard let mainView = navigationController?.parent?.view else { return }
+        let hudView = HudView.hud(inView: mainView, animated: true)
+        hudView.text = "Added"
+          afterDelay(2) {
+            hudView.hide()
+          }
+        //MARK: poster image help
+        let urlString = getImage(anime: anime as NSDictionary)
+        CoreDataHelper.save(name: titlelabel.text!, synopsis: synopsislabel.text!, poster: urlString)
+
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         let att = anime["attributes"] as! NSDictionary
-        let poster = att["posterImage"] as! NSDictionary
-        let posterimage = poster["medium"] as! String
+        //let poster = att["posterImage"] as! NSDictionary
+        //let posterimage = poster["medium"] as! String
+        let posterimage = getImage(anime: anime as NSDictionary)
         let posterUrl = URL(string: posterimage)!
         
         if let backposter = att["coverImage"] as? NSDictionary{
@@ -41,8 +58,15 @@ class AnimeDetailsViewController: UIViewController {
         
         
     }
-    
-
+    func getImage(anime: NSDictionary)-> String{
+        let att = anime["attributes"] as! NSDictionary
+        let poster = att["posterImage"] as! NSDictionary
+        let urlString = poster["medium"] as! String
+        //let posterUrl = URL(string: posterimage)!
+        
+        return urlString
+    }
+  
     /*
     // MARK: - Navigation
 
