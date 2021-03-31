@@ -17,13 +17,16 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
     var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad() //when it loads the view controller ONCE
+        
         tableView.dataSource = self
         tableView.delegate = self
-        load()
         // Do any additional setup after loading the view.
     }
-    
+    //loads every time view appears
+    override func viewDidAppear(_ animated: Bool) {
+        load()
+    }
     /*
      // MARK: - Navigation
      
@@ -65,6 +68,11 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
         //let atts = favAnime["attributes"] as! NSDictionary
         cell.favtitleLabel.text = favAnime.value(forKeyPath: "title") as? String
         cell.favsumLabel.text = favAnime.value(forKeyPath: "synopsis") as? String
+        if let poster = favAnime.value(forKey: "poster") as? String{
+            let posterUrl = URL(string: poster)!
+            cell.favposterView.af.setImage(withURL: posterUrl)
+
+        }
         //let synopsis = atts["synopsis"] as! String
         //let poster = atts["posterImage"] as! NSDictionary
         //let posterimage = poster["medium"] as! String

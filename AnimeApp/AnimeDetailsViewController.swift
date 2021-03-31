@@ -27,7 +27,8 @@ class AnimeDetailsViewController: UIViewController {
             hudView.hide()
           }
         //MARK: poster image help
-        CoreDataHelper.save(name: titlelabel.text!, synopsis: synopsislabel.text!)
+        let urlString = getImage(anime: anime as NSDictionary)
+        CoreDataHelper.save(name: titlelabel.text!, synopsis: synopsislabel.text!, poster: urlString)
 
     }
    
@@ -37,8 +38,9 @@ class AnimeDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let att = anime["attributes"] as! NSDictionary
-        let poster = att["posterImage"] as! NSDictionary
-        let posterimage = poster["medium"] as! String
+        //let poster = att["posterImage"] as! NSDictionary
+        //let posterimage = poster["medium"] as! String
+        let posterimage = getImage(anime: anime as NSDictionary)
         let posterUrl = URL(string: posterimage)!
         
         if let backposter = att["coverImage"] as? NSDictionary{
@@ -56,7 +58,14 @@ class AnimeDetailsViewController: UIViewController {
         
         
     }
-    
+    func getImage(anime: NSDictionary)-> String{
+        let att = anime["attributes"] as! NSDictionary
+        let poster = att["posterImage"] as! NSDictionary
+        let urlString = poster["medium"] as! String
+        //let posterUrl = URL(string: posterimage)!
+        
+        return urlString
+    }
   
     /*
     // MARK: - Navigation
