@@ -17,7 +17,7 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
     var managedObjectContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
-        super.viewDidLoad() //when it loads the view controller ONCE
+        super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -27,15 +27,6 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidAppear(_ animated: Bool) {
         load()
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     func load() {
         //1
@@ -64,8 +55,9 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:  "FavTableViewCell") as! FavTableViewCell
         
+        
         let favAnime = favorites[indexPath.row]
-        //let atts = favAnime["attributes"] as! NSDictionary
+
         cell.favtitleLabel.text = favAnime.value(forKeyPath: "title") as? String
         cell.favsumLabel.text = favAnime.value(forKeyPath: "synopsis") as? String
         if let poster = favAnime.value(forKey: "poster") as? String{
@@ -73,15 +65,20 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.favposterView.af.setImage(withURL: posterUrl)
 
         }
-        //let synopsis = atts["synopsis"] as! String
-        //let poster = atts["posterImage"] as! NSDictionary
-        //let posterimage = poster["medium"] as! String
-        //let posterUrl = URL(string: posterimage)!
-        
-        //cell.favsumLabel.text = synopsis
-        //cell.favposterView.af.setImage(withURL: posterUrl)
         
         return cell
     }
-    
+    //MARK: Delete favorite items
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let anime = favorites[indexPath.row]
+        
+        if editingStyle == .delete {
+            CoreDataHelper.delete(anime: anime)
+            favorites.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
 }

@@ -14,6 +14,7 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet var tableView: UITableView!
     
     var animes = [[String:Any]]()
+//    var animes = [Anime]()
     var numAnime = 0
     var managedObjectContext: NSManagedObjectContext!
 
@@ -40,6 +41,10 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
         
         //THIS WAS CHANGED DATA FROM RESULTS
         self.animes += dataDictionary["data"] as! [[String:Any]]
+//        for animeData in dataDictionary {
+//            let anime = Anime(data: animeData)
+//            self.animes.append(anime)
+//        }
         //print(self.animes)
         self.tableView.reloadData()
         
