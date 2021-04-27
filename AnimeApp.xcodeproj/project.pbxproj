@@ -10,6 +10,9 @@
 		3483B3403337F22CCB208EC8 /* Pods_AnimeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA651C2CCCB01BE8B4ECF2 /* Pods_AnimeAppTests.framework */; };
 		423596B52638971A0069A3A3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423596B42638971A0069A3A3 /* SearchViewController.swift */; };
 		423596BA26389EED0069A3A3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423596B926389EED0069A3A3 /* SearchResult.swift */; };
+		423596BF2638A3730069A3A3 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423596BE2638A3730069A3A3 /* SearchResultCell.xib */; };
+		423596CC2638A9A40069A3A3 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423596CB2638A9A40069A3A3 /* SearchResultCell.swift */; };
+		423596D12638B3C90069A3A3 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423596D02638B3C90069A3A3 /* NothingFoundCell.xib */; };
 		42382DF225E85ABC00DB8929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42382DF125E85ABC00DB8929 /* AppDelegate.swift */; };
 		42382DF425E85ABC00DB8929 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42382DF325E85ABC00DB8929 /* SceneDelegate.swift */; };
 		42382DF925E85ABC00DB8929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42382DF725E85ABC00DB8929 /* Main.storyboard */; };
@@ -54,6 +57,9 @@
 		3A2BC57AEDD315967FA4529A /* Pods-AnimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeApp.debug.xcconfig"; path = "Target Support Files/Pods-AnimeApp/Pods-AnimeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		423596B42638971A0069A3A3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		423596B926389EED0069A3A3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		423596BE2638A3730069A3A3 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		423596CB2638A9A40069A3A3 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		423596D02638B3C90069A3A3 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		42382DEE25E85ABC00DB8929 /* AnimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42382DF125E85ABC00DB8929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42382DF325E85ABC00DB8929 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +191,9 @@
 			children = (
 				423596B42638971A0069A3A3 /* SearchViewController.swift */,
 				423596B926389EED0069A3A3 /* SearchResult.swift */,
+				423596BE2638A3730069A3A3 /* SearchResultCell.xib */,
+				423596CB2638A9A40069A3A3 /* SearchResultCell.swift */,
+				423596D02638B3C90069A3A3 /* NothingFoundCell.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -322,6 +331,8 @@
 			files = (
 				42382DFE25E85ABD00DB8929 /* LaunchScreen.storyboard in Resources */,
 				42382DFB25E85ABD00DB8929 /* Assets.xcassets in Resources */,
+				423596BF2638A3730069A3A3 /* SearchResultCell.xib in Resources */,
+				423596D12638B3C90069A3A3 /* NothingFoundCell.xib in Resources */,
 				42382DF925E85ABC00DB8929 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +467,7 @@
 				42A2BC2225EEA44500EE783E /* AnimeCell.swift in Sources */,
 				42B1CA6F260686CF00372216 /* Favorite+CoreDataClass.swift in Sources */,
 				42382E2825E85B9800DB8929 /* AnimesViewController.swift in Sources */,
+				423596CC2638A9A40069A3A3 /* SearchResultCell.swift in Sources */,
 				42B4B67D25F69B3C005D0994 /* AnimeDetailsViewController.swift in Sources */,
 				423596BA26389EED0069A3A3 /* SearchResult.swift in Sources */,
 				42382DF225E85ABC00DB8929 /* AppDelegate.swift in Sources */,
