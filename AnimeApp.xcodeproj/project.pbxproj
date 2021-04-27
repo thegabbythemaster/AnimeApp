@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3483B3403337F22CCB208EC8 /* Pods_AnimeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13AA651C2CCCB01BE8B4ECF2 /* Pods_AnimeAppTests.framework */; };
+		423596B52638971A0069A3A3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423596B42638971A0069A3A3 /* SearchViewController.swift */; };
+		423596BA26389EED0069A3A3 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423596B926389EED0069A3A3 /* SearchResult.swift */; };
 		42382DF225E85ABC00DB8929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42382DF125E85ABC00DB8929 /* AppDelegate.swift */; };
 		42382DF425E85ABC00DB8929 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42382DF325E85ABC00DB8929 /* SceneDelegate.swift */; };
 		42382DF925E85ABC00DB8929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42382DF725E85ABC00DB8929 /* Main.storyboard */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		13AA651C2CCCB01BE8B4ECF2 /* Pods_AnimeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2BC57AEDD315967FA4529A /* Pods-AnimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeApp.debug.xcconfig"; path = "Target Support Files/Pods-AnimeApp/Pods-AnimeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		423596B42638971A0069A3A3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		423596B926389EED0069A3A3 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		42382DEE25E85ABC00DB8929 /* AnimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42382DF125E85ABC00DB8929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42382DF325E85ABC00DB8929 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				42CD72F52603FD7F00E02E8C /* HudView.swift */,
 				42B1CA73260689FF00372216 /* Functions.swift */,
 				42AF60E1260A71E100CCF210 /* CoreDataHelper.swift */,
+				426BEE6A26388F5200279F90 /* Search */,
 			);
 			path = AnimeApp;
 			sourceTree = "<group>";
@@ -173,6 +178,15 @@
 				42382E1525E85ABD00DB8929 /* Info.plist */,
 			);
 			path = AnimeAppUITests;
+			sourceTree = "<group>";
+		};
+		426BEE6A26388F5200279F90 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				423596B42638971A0069A3A3 /* SearchViewController.swift */,
+				423596B926389EED0069A3A3 /* SearchResult.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		8F7CD4AE5396FE83FCA0F8B7 /* Pods */ = {
@@ -443,7 +457,9 @@
 				42B1CA6F260686CF00372216 /* Favorite+CoreDataClass.swift in Sources */,
 				42382E2825E85B9800DB8929 /* AnimesViewController.swift in Sources */,
 				42B4B67D25F69B3C005D0994 /* AnimeDetailsViewController.swift in Sources */,
+				423596BA26389EED0069A3A3 /* SearchResult.swift in Sources */,
 				42382DF225E85ABC00DB8929 /* AppDelegate.swift in Sources */,
+				423596B52638971A0069A3A3 /* SearchViewController.swift in Sources */,
 				42AF60E2260A71E100CCF210 /* CoreDataHelper.swift in Sources */,
 				42382DF425E85ABC00DB8929 /* SceneDelegate.swift in Sources */,
 				424A62D22603C7EC00E253A4 /* FavAnimeViewController.swift in Sources */,

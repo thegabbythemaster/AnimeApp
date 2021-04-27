@@ -16,7 +16,7 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
     var numAnime = 0
     var managedObjectContext: NSManagedObjectContext!
     
-    override func viewDidLoad() {
+    override func viewDidLoad() { //loads only once
         super.viewDidLoad()
         
         tableView.dataSource = self

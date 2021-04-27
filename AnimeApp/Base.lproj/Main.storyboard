@@ -165,11 +165,12 @@
                     <connections>
                         <segue destination="mdd-QT-BPV" kind="relationship" relationship="viewControllers" id="xyc-sB-tR2"/>
                         <segue destination="aam-dh-zcE" kind="relationship" relationship="viewControllers" id="gMv-aH-EmA"/>
+                        <segue destination="Hbh-TF-teB" kind="relationship" relationship="viewControllers" id="jMt-ho-EPn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCv-A8-yiT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1261" y="-619"/>
+            <point key="canvasLocation" x="-546" y="-740"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="M3A-SQ-vgZ">
@@ -228,7 +229,7 @@
         <scene sceneID="OTy-7F-gM9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mdd-QT-BPV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trending" id="pEi-9B-Ncg"/>
+                    <tabBarItem key="tabBarItem" title="Trending" image="flame" catalog="system" id="pEi-9B-Ncg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nJr-5f-Ihr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -243,11 +244,54 @@
             </objects>
             <point key="canvasLocation" x="-545" y="104"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="c6N-8K-7Y5">
+            <objects>
+                <viewController id="SH2-Yv-jaR" customClass="SearchViewController" customModule="AnimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Qj-tr-qjW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Ti-xu-suY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SH2-Yv-jaR" id="vsD-c6-dfX"/>
+                                    <outlet property="delegate" destination="SH2-Yv-jaR" id="9B5-1I-Xtf"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search Anime" translatesAutoresizingMaskIntoConstraints="NO" id="6lr-nY-2TJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SH2-Yv-jaR" id="Swe-Vb-dvm"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lG5-dD-6Ye"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6lr-nY-2TJ" firstAttribute="top" secondItem="lG5-dD-6Ye" secondAttribute="top" id="7iF-Rh-vIe"/>
+                            <constraint firstItem="6lr-nY-2TJ" firstAttribute="trailing" secondItem="lG5-dD-6Ye" secondAttribute="trailing" id="Dei-yJ-pM5"/>
+                            <constraint firstItem="6lr-nY-2TJ" firstAttribute="leading" secondItem="lG5-dD-6Ye" secondAttribute="leading" id="iFQ-UE-XVr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="RFI-ms-7Xh"/>
+                    <connections>
+                        <outlet property="searchBar" destination="6lr-nY-2TJ" id="e22-Du-iJX"/>
+                        <outlet property="tableView" destination="9Ti-xu-suY" id="BQz-HC-mFt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6BS-4i-RbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618.84057971014499" y="917.41071428571422"/>
+        </scene>
         <!--Favorites-->
         <scene sceneID="llf-xX-LyF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aam-dh-zcE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="Iz7-Hp-vhO"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="suit.heart" catalog="system" id="Iz7-Hp-vhO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="q5a-tA-qVS">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -262,8 +306,30 @@
             </objects>
             <point key="canvasLocation" x="-1971.0144927536232" y="103.79464285714285"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="c55-Hl-SeE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hbh-TF-teB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="8Sy-zd-RqF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RAr-VH-QXS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SH2-Yv-jaR" kind="relationship" relationship="rootViewController" id="p9A-eq-46e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5d-Oj-1xK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="620" y="104"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="flame" catalog="system" width="108" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="suit.heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

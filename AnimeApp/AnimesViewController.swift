@@ -9,14 +9,16 @@ import UIKit
 import AlamofireImage
 import CoreData
 
-class AnimesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{ //deleted UISearchBarDelegate
+class AnimesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet var tableView: UITableView!
+    
     
     var animes = [[String:Any]]()
 //    var animes = [Anime]()
     var numAnime = 0
     var managedObjectContext: NSManagedObjectContext!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +124,7 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
 }
+
 //make a sep. view controller that has the categories where the user selects it, makes a new api call, parse the new response and itll display on the home screen when the user goes back
 //bookmark tab have a bookmark button at the synosipis page.
 //LOOK AT LOCATION APP TO STORE ALL THE BOOKMARKS IN TEXTBOOK 
