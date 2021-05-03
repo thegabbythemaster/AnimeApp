@@ -61,9 +61,7 @@ struct CoreDataHelper {
         } catch {
             print(error)
         }
-        
-        
-        
+
         // remove anime
         
     }

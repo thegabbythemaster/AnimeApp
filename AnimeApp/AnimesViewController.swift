@@ -49,12 +49,6 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
 //        }
         //print(self.animes)
         self.tableView.reloadData()
-        
-        //print(dataDictionary)
-
-          // TODO: Get the array of animes
-          // TODO: Store the movies in a property to use elsewhere
-          // TODO: Reload your table view data
        }
     }
     task.resume()
