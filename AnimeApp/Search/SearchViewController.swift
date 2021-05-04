@@ -79,10 +79,6 @@ struct TableView {
 
 // MARK: - Table View Delegate
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
-
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchResults.count == 0 {
             return 1

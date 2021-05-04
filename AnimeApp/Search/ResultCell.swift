@@ -1,19 +1,14 @@
 //
-//  AnimeCell.swift
+//  ResultCell.swift
 //  AnimeApp
 //
-//  Created by Gabby Gonzalez on 3/2/21.
+//  Created by Gabby Gonzalez on 5/4/21.
 //
 
 import UIKit
-import AlamofireImage
 
-class AnimeCell: UITableViewCell {
+class ResultCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var sumLabel: UILabel!
-    @IBOutlet weak var posterView: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,6 +17,7 @@ class AnimeCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
 
 }

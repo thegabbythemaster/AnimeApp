@@ -32,6 +32,9 @@
 		42B4B67D25F69B3C005D0994 /* AnimeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4B67C25F69B3C005D0994 /* AnimeDetailsViewController.swift */; };
 		42CD72F62603FD7F00E02E8C /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CD72F52603FD7F00E02E8C /* HudView.swift */; };
 		42F005F426406326007C8B67 /* AnimeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F005F326406326007C8B67 /* AnimeAPI.swift */; };
+		42F005F72641C0DE007C8B67 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F005F62641C0DE007C8B67 /* TrendingViewController.swift */; };
+		42F005F92641C42E007C8B67 /* TrendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F005F82641C42E007C8B67 /* TrendingCell.swift */; };
+		42F005FD2641CB1A007C8B67 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F005FC2641CB1A007C8B67 /* ResultCell.swift */; };
 		5776BAE7702050F368B6F9F9 /* Pods_AnimeApp_AnimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3960E888F9F6D6431EAED9 /* Pods_AnimeApp_AnimeAppUITests.framework */; };
 		80E88BEF31DBCC33A85B4D9F /* Pods_AnimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D182BBBD07B62E93D679663 /* Pods_AnimeApp.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +89,9 @@
 		42B4B67C25F69B3C005D0994 /* AnimeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsViewController.swift; sourceTree = "<group>"; };
 		42CD72F52603FD7F00E02E8C /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		42F005F326406326007C8B67 /* AnimeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeAPI.swift; sourceTree = "<group>"; };
+		42F005F62641C0DE007C8B67 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		42F005F82641C42E007C8B67 /* TrendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCell.swift; sourceTree = "<group>"; };
+		42F005FC2641CB1A007C8B67 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		6D182BBBD07B62E93D679663 /* Pods_AnimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		860DA3EF0B7F009D7E33FC91 /* Pods-AnimeApp-AnimeAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeApp-AnimeAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimeApp-AnimeAppUITests/Pods-AnimeApp-AnimeAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		970980E272342FDDDCAB7BDE /* Pods-AnimeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimeApp.release.xcconfig"; path = "Target Support Files/Pods-AnimeApp/Pods-AnimeApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 				42CD72F52603FD7F00E02E8C /* HudView.swift */,
 				42B1CA73260689FF00372216 /* Functions.swift */,
 				42AF60E1260A71E100CCF210 /* CoreDataHelper.swift */,
+				42F005F52641BFB2007C8B67 /* trending anime */,
 				426BEE6A26388F5200279F90 /* Search */,
 			);
 			path = AnimeApp;
@@ -197,8 +204,18 @@
 				423596CB2638A9A40069A3A3 /* SearchResultCell.swift */,
 				423596D02638B3C90069A3A3 /* NothingFoundCell.xib */,
 				42F005F326406326007C8B67 /* AnimeAPI.swift */,
+				42F005FC2641CB1A007C8B67 /* ResultCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		42F005F52641BFB2007C8B67 /* trending anime */ = {
+			isa = PBXGroup;
+			children = (
+				42F005F62641C0DE007C8B67 /* TrendingViewController.swift */,
+				42F005F82641C42E007C8B67 /* TrendingCell.swift */,
+			);
+			path = "trending anime";
 			sourceTree = "<group>";
 		};
 		8F7CD4AE5396FE83FCA0F8B7 /* Pods */ = {
@@ -470,6 +487,7 @@
 				42A2BC2225EEA44500EE783E /* AnimeCell.swift in Sources */,
 				42B1CA6F260686CF00372216 /* Favorite+CoreDataClass.swift in Sources */,
 				42382E2825E85B9800DB8929 /* AnimesViewController.swift in Sources */,
+				42F005F92641C42E007C8B67 /* TrendingCell.swift in Sources */,
 				423596CC2638A9A40069A3A3 /* SearchResultCell.swift in Sources */,
 				42B4B67D25F69B3C005D0994 /* AnimeDetailsViewController.swift in Sources */,
 				423596BA26389EED0069A3A3 /* SearchResult.swift in Sources */,
@@ -481,6 +499,8 @@
 				42CD72F62603FD7F00E02E8C /* HudView.swift in Sources */,
 				42B1CA74260689FF00372216 /* Functions.swift in Sources */,
 				42F005F426406326007C8B67 /* AnimeAPI.swift in Sources */,
+				42F005FD2641CB1A007C8B67 /* ResultCell.swift in Sources */,
+				42F005F72641C0DE007C8B67 /* TrendingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,12 +16,12 @@ class AnimeApi {
     static func search(searchText: String, completion: @escaping ([SearchResult]?) -> Void) {
         let urlString = String(format: "https://kitsu.io/api/edge/anime?filter[text]=\(searchText)")
         
-        guard let encodedURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+        guard let encodedURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             //Invalid URL
             return
         }
-        AF.request(urlString).responseJSON() { response in
-            
+        //AF.request(urlString).responseJSON() { response in
+        AF.request(encodedURL).responseJSON() { response in
 
             let data = response.value as! [String:Any]
             let animeDataArray = data["data"] as! [[String:Any]]
