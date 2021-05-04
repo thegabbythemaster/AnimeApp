@@ -34,12 +34,8 @@ class AnimeDetailsViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         let att = anime["attributes"] as! NSDictionary
-        //let poster = att["posterImage"] as! NSDictionary
-        //let posterimage = poster["medium"] as! String
         let posterimage = getImage(anime: anime as NSDictionary)
         let posterUrl = URL(string: posterimage)!
         
@@ -62,19 +58,8 @@ class AnimeDetailsViewController: UIViewController {
         let att = anime["attributes"] as! NSDictionary
         let poster = att["posterImage"] as! NSDictionary
         let urlString = poster["medium"] as! String
-        //let posterUrl = URL(string: posterimage)!
         
         return urlString
     }
-  
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
