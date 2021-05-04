@@ -58,7 +58,6 @@ class AnimeDetailsViewController: UIViewController {
         let att = anime["attributes"] as! NSDictionary
         let poster = att["posterImage"] as! NSDictionary
         let urlString = poster["medium"] as! String
-        //let posterUrl = URL(string: posterimage)!
         
         return urlString
     }

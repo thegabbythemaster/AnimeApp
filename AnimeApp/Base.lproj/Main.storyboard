@@ -214,6 +214,7 @@
                                     <outlet property="favposterView" destination="FZP-FC-Vm1" id="y1x-Vo-UnK"/>
                                     <outlet property="favsumLabel" destination="Ycl-DI-QPq" id="5ID-FG-Li1"/>
                                     <outlet property="favtitleLabel" destination="np8-Rh-biD" id="oQu-pR-3O6"/>
+                                    <segue destination="7yj-Jk-6qa" kind="show" id="9WR-hZ-wx8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -254,7 +255,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Ti-xu-suY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Ti-xu-suY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -425,6 +426,9 @@
             <point key="canvasLocation" x="1610" y="104"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9WR-hZ-wx8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

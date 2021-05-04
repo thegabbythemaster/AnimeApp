@@ -33,7 +33,7 @@ class SearchViewController: UIViewController {
         cellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
-    
+
     
     func showNetworkError() {
       let alert = UIAlertController(title: "Whoops...", message: "There was an error accessing the Anime Store. Please try again.", preferredStyle: .alert)
