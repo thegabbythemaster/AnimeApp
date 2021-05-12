@@ -105,7 +105,22 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
         //pass the selected movie to the details view controller
         
         let detailsViewController = segue.destination as! AnimeDetailsViewController
-        detailsViewController.anime = anime
+        let att = anime["attributes"] as! NSDictionary
+        let title = att["canonicalTitle"] as! String
+        
+        //to get summary
+        let synopsis = att["synopsis"] as! String
+        let poster = att["posterImage"] as? NSDictionary ?? [:]
+        let posterimage = poster["medium"] as? String
+        let backDropImages = att["coverImage"] as? NSDictionary ?? [:]
+        let backDrop = backDropImages["original"] as? String
+        
+        detailsViewController.synopsis = synopsis
+        detailsViewController.poster = posterimage
+        detailsViewController.animeTitle = title
+        detailsViewController.backDrop = backDrop
+        
+        
         
         tableView.deselectRow(at: indexPath, animated: true)
         //MARK: for fav

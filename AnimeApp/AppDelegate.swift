@@ -10,7 +10,7 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    lazy var managedObjectContext = persistentContainer.viewContext
+    lazy var managedObjectContext = persistentContainer.viewContext //need
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       print(applicationDocumentsDirectory)
@@ -26,10 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    //for the favorite tab
     lazy var persistentContainer: NSPersistentContainer = {
       let container = NSPersistentContainer(name: "MyFav")
       container.loadPersistentStores {_, error in
@@ -39,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
       return container
     }()
+    //need for saving in core data
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

@@ -19,4 +19,5 @@ extension Favorite{
     @NSManaged public var title: String?
     @NSManaged public var synopsis: String?
     @NSManaged public var poster: String?
+    @NSManaged public var backDrop: String?
 }

@@ -16,6 +16,7 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
     var numAnime = 0
     var managedObjectContext: NSManagedObjectContext!
     
+    
     override func viewDidLoad() { //loads only once
         super.viewDidLoad()
         
@@ -68,6 +69,37 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return cell
     }
+  
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        //find selected anime
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        let anime = favorites[indexPath.row] 
+        //pass the selected movie to the details view controller
+        
+
+        let detailsViewController = segue.destination as! AnimeDetailsViewController
+        detailsViewController.animeTitle = anime.value(forKey: "title") as? String
+        detailsViewController.poster = anime.value(forKey: "poster") as? String
+        detailsViewController.synopsis = anime.value(forKey: "synopsis") as? String
+        detailsViewController.backDrop = anime.value(forKey: "backDrop") as? String
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        //MARK: for fav
+         if segue.identifier == "TagFav" {
+            let controller = segue.destination as! FavAnimeViewController
+            controller.managedObjectContext = managedObjectContext
+
+          }
+
+    }
+    
     //MARK: Delete favorite items
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let anime = favorites[indexPath.row]

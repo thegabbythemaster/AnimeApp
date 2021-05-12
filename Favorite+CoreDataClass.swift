@@ -10,7 +10,9 @@ import Foundation
 import CoreData
 import UIKit
 
-@objc(Favorite)
+
 public class Favorite: NSManagedObject {
 
+
+    
 }
