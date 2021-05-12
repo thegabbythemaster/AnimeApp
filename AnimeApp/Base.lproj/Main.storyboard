@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,8 +107,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-fx-tcf">
-                                <rect key="frame" x="222" y="363" width="111" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-fx-tcf">
+                                <rect key="frame" x="217" y="361" width="145" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80435779169999999" green="0.38051273289999998" blue="0.9752266839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add to Favorites">
@@ -152,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOu-EK-TaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-546" y="1662"/>
+            <point key="canvasLocation" x="-546.37681159420299" y="1661.3839285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Eba-vY-4v9">
@@ -266,7 +265,6 @@
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search Anime" translatesAutoresizingMaskIntoConstraints="NO" id="6lr-nY-2TJ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
-                                <color key="barTintColor" name="SearchBar"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="SH2-Yv-jaR" id="Swe-Vb-dvm"/>
@@ -285,6 +283,7 @@
                     <connections>
                         <outlet property="searchBar" destination="6lr-nY-2TJ" id="e22-Du-iJX"/>
                         <outlet property="tableView" destination="9Ti-xu-suY" id="BQz-HC-mFt"/>
+                        <segue destination="7yj-Jk-6qa" kind="show" identifier="Details" id="hdo-bV-XdT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BS-4i-RbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -427,16 +426,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9WR-hZ-wx8"/>
+        <segue reference="hdo-bV-XdT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="flame" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play" catalog="system" width="120" height="128"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
-        <namedColor name="SearchBar">
-            <color red="0.70588235294117652" green="0.94117647058823528" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

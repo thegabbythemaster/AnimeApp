@@ -15,8 +15,13 @@ class AnimeDetailsViewController: UIViewController {
     @IBOutlet weak var posterview: UIImageView!
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var synopsislabel: UILabel!
-    var anime: [String:Any]!
-    var managedObjectContext: NSManagedObjectContext!
+    
+    var managedObjectContext: NSManagedObjectContext! //need
+    
+    var animeTitle: String!
+    var synopsis: String!
+    var backDrop: String?
+    var poster: String?
     
     
     @IBAction func AddFav(_ sender: Any) {
@@ -27,30 +32,24 @@ class AnimeDetailsViewController: UIViewController {
             hudView.hide()
           }
         //MARK: poster image help
-        let urlString = getImage(anime: anime as NSDictionary)
-        CoreDataHelper.save(name: titlelabel.text!, synopsis: synopsislabel.text!, poster: urlString)
+        //let urlString = getImage(anime: anime as NSDictionary)
+        CoreDataHelper.save(name: animeTitle, synopsis: synopsis, poster: poster ?? "", backDrop: backDrop ?? "")//this helper function saves to the coredata
 
     }
-   
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        titlelabel.text = animeTitle
         
-        let att = anime["attributes"] as! NSDictionary
-        let posterimage = getImage(anime: anime as NSDictionary)
-        let posterUrl = URL(string: posterimage)!
-        
-        if let backposter = att["coverImage"] as? NSDictionary{
-            let backimage = backposter["original"] as! String
-            let backUrl = URL(string: backimage)!
+        if let poster = poster{
+            let posterUrl = URL(string: poster)!
+            posterview.af.setImage(withURL: posterUrl)
+        }
+        if let backDrop = backDrop{
+            let backUrl = URL(string: backDrop)!
             backdropview.af.setImage(withURL: backUrl)
         }
-
-        
-        
-        titlelabel.text = att["canonicalTitle"] as? String
-        
-        synopsislabel.text = att["synopsis"] as? String
-        posterview.af.setImage(withURL: posterUrl)
+        synopsislabel.text = synopsis
         
         
     }

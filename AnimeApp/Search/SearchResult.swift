@@ -12,12 +12,14 @@ class SearchResult {
     var synopsis: String!
     var title: String!
     var imageUrls: [String:Any]
+    var backDropImages: [String:Any]
     
     // inside attributes dictionary
     init(data: [String:Any]) {
         title = data["canonicalTitle"] as? String ?? ""
         synopsis = data["synopsis"] as? String ?? ""
         imageUrls = data["posterImage"] as? [String:Any] ?? [:]
+        backDropImages = data["coverImage"] as? [String:Any] ?? [:]
     }
     
     /*
@@ -40,6 +42,8 @@ class SearchResult {
         }
         return nil
     }
+    
+    
     
 }
 

@@ -21,7 +21,7 @@ struct CoreDataHelper {
                                    in: managedContext)!
     
     
-    static func save(name: String, synopsis: String, poster: String) {
+    static func save(name: String, synopsis: String, poster: String, backDrop: String) {
         // insert anime
         let anime = NSManagedObject(entity: entity,
                                     insertInto: managedContext)
@@ -29,7 +29,7 @@ struct CoreDataHelper {
         anime.setValue(name, forKeyPath: "title")
         anime.setValue(synopsis, forKeyPath: "synopsis")
         anime.setValue(poster, forKeyPath: "poster")
-        
+        anime.setValue(backDrop, forKey: "backDrop")
         // save
         do {
             try managedContext.save()
@@ -37,7 +37,6 @@ struct CoreDataHelper {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-        
     }
     
     static func delete(anime: NSManagedObject) {
@@ -61,8 +60,6 @@ struct CoreDataHelper {
         } catch {
             print(error)
         }
-
-        // remove anime
         
     }
     

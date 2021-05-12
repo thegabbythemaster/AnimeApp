@@ -8,17 +8,18 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     var searchResults = [SearchResult]()
+    var selectedAnime: SearchResult?
     var hasSearched = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
         setupTableView()
         searchBar.becomeFirstResponder()
     }
@@ -33,14 +34,35 @@ class SearchViewController: UIViewController {
         cellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        //find selected anime
+        
+        let anime = selectedAnime!
+        //pass the selected movie to the details view controller
+        
+        let detailsViewController = segue.destination as! AnimeDetailsViewController
+        
+        detailsViewController.synopsis = anime.synopsis
+        detailsViewController.poster = anime.imageUrls["original"] as? String
+        detailsViewController.animeTitle = anime.title
+        detailsViewController.backDrop = anime.backDropImages["original"] as? String
+        //
+        
+        
+        
+    }
+    
     
     func showNetworkError() {
-      let alert = UIAlertController(title: "Whoops...", message: "There was an error accessing the Anime Store. Please try again.", preferredStyle: .alert)
-
-      let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-      alert.addAction(action)
-      present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Whoops...", message: "There was an error accessing the Anime Store. Please try again.", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -57,23 +79,23 @@ extension SearchViewController: UISearchBarDelegate {
                     self.tableView.reloadData()
                 }
             }
-
+            
         }
     }
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
-      return .topAttached
+        return .topAttached
     }
     
 }
 
 struct TableView {
     
-  struct CellIdentifiers {
-    static let searchResultCell = "SearchResultCell"
-    static let nothingFoundCell = "NothingFoundCell"
-    static let loadingCell = "LoadingCell"
-  }
+    struct CellIdentifiers {
+        static let searchResultCell = "SearchResultCell"
+        static let nothingFoundCell = "NothingFoundCell"
+        static let loadingCell = "LoadingCell"
+    }
     
 }
 
@@ -87,24 +109,30 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return searchResults.count
     }
     
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if searchResults.count == 0 {
-        return tableView.dequeueReusableCell(
-              withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
-      }
     
-    else {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell,for: indexPath) as! SearchResultCell
-
-        let searchResult = searchResults[indexPath.row]
-        
-        if let imageUrl = searchResult.getImageUrl() {
-            cell.posterImageView.af.setImage(withURL: imageUrl)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedAnime = searchResults[indexPath.row]
+        performSegue(withIdentifier: "Details", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if searchResults.count == 0 {
+            return tableView.dequeueReusableCell(
+                withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
         }
         
-        cell.nameLabel.text = searchResult.title
-        cell.synopsisLabel.text = searchResult.synopsis
-        return cell
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell,for: indexPath) as! SearchResultCell
+            
+            let searchResult = searchResults[indexPath.row]
+            
+            if let imageUrl = searchResult.getImageUrl() {
+                cell.posterImageView.af.setImage(withURL: imageUrl)
+            }
+            
+            cell.nameLabel.text = searchResult.title
+            cell.synopsisLabel.text = searchResult.synopsis
+            return cell
         }
     }
 }
