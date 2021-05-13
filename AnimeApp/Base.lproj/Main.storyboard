@@ -349,6 +349,7 @@
                                             <outlet property="TPosterView" destination="1cJ-sq-NRU" id="tiu-F7-pAB"/>
                                             <outlet property="TSynopsisLabel" destination="0ew-Xi-2ew" id="eQ2-wZ-un1"/>
                                             <outlet property="TTitleLabel" destination="HBU-jn-yn5" id="8hJ-kA-jpt"/>
+                                            <segue destination="7yj-Jk-6qa" kind="show" id="lGP-Fp-g5i"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -426,7 +427,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hdo-bV-XdT"/>
+        <segue reference="9WR-hZ-wx8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="flame" catalog="system" width="108" height="128"/>

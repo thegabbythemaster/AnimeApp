@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 class TrendingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     @IBOutlet weak var tableView: UITableView!
     
     var animes = [[String:Any]]()
+    var managedObjectContext: NSManagedObjectContext!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,44 @@ class TrendingViewController: UIViewController, UITableViewDataSource, UITableVi
     task.resume()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        //find selected anime
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        let anime = animes[indexPath.row]
+        //pass the selected movie to the details view controller
+        
+        let detailsViewController = segue.destination as! AnimeDetailsViewController
+        let att = anime["attributes"] as! NSDictionary
+        let title = att["canonicalTitle"] as! String
+        
+        //to get summary
+        let synopsis = att["synopsis"] as! String
+        let poster = att["posterImage"] as? NSDictionary ?? [:]
+        let posterimage = poster["medium"] as? String
+        let backDropImages = att["coverImage"] as? NSDictionary ?? [:]
+        let backDrop = backDropImages["original"] as? String
+        
+        detailsViewController.synopsis = synopsis
+        detailsViewController.poster = posterimage
+        detailsViewController.animeTitle = title
+        detailsViewController.backDrop = backDrop
+        
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        //MARK: for fav
+         if segue.identifier == "TagFav" {
+            let controller = segue.destination as! FavAnimeViewController
+            controller.managedObjectContext = managedObjectContext
+
+          }
+
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return animes.count
     }
