@@ -13,6 +13,7 @@ class SearchResultCell: UITableViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
+    var downloadTask: URLSessionDownloadTask?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,15 @@ class SearchResultCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+    // MARK: - Helper Methods
+    func configure(for result: SearchResult) {
+      nameLabel.text = result.title
+        
+      posterImageView.image = UIImage(systemName: "square")
+     // if let smallURL = URL(string: result.imageSmall) {
+        //downloadTask = posterImageView.loadImage(url: smallURL)
+      //}
     }
 
 }

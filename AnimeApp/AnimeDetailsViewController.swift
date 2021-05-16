@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AlamofireImage
 import CoreData
 
 class AnimeDetailsViewController: UIViewController {
@@ -43,11 +42,11 @@ class AnimeDetailsViewController: UIViewController {
         
         if let poster = poster{
             let posterUrl = URL(string: poster)!
-            posterview.af.setImage(withURL: posterUrl)
+            posterview.loadImage(url: posterUrl)
         }
         if let backDrop = backDrop{
             let backUrl = URL(string: backDrop)!
-            backdropview.af.setImage(withURL: backUrl)
+            backdropview.loadImage(url: backUrl)
         }
         synopsislabel.text = synopsis
         

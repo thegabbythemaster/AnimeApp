@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AlamofireImage
 import CoreData
 
 class AnimesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -15,9 +14,9 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     var animes = [[String:Any]]()
-//    var animes = [Anime]()
     var numAnime = 0
     var managedObjectContext: NSManagedObjectContext!
+    var downloadTask: URLSessionDownloadTask?
     
 
     override func viewDidLoad() {
@@ -80,7 +79,7 @@ class AnimesViewController: UIViewController, UITableViewDataSource, UITableView
         let posterUrl = URL(string: posterimage)!
         
         cell.sumLabel.text = synopsis
-        cell.posterView.af.setImage(withURL: posterUrl)
+        cell.posterView.loadImage(url: posterUrl)
         
         
         cell.titleLabel.text = title
