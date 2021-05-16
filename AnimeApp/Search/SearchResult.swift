@@ -21,14 +21,6 @@ class SearchResult {
         imageUrls = data["posterImage"] as? [String:Any] ?? [:]
         backDropImages = data["coverImage"] as? [String:Any] ?? [:]
     }
-    
-    /*
-    if let backposter = att["coverImage"] as? NSDictionary{
-        let backimage = backposter["original"] as! String
-        let backUrl = URL(string: backimage)!
-        backdropview.af.setImage(withURL: backUrl)
-    }
-    */
     func getImageUrl() -> URL? {
         //let imageUrlString = imageUrls["original"] as! String
         if let imageUrlString = imageUrls["posterImage"] as? NSDictionary{
@@ -42,7 +34,6 @@ class SearchResult {
         }
         return nil
     }
-    
     
     
 }

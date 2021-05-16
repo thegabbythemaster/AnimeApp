@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 class AnimeCell: UITableViewCell {
 

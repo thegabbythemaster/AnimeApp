@@ -127,7 +127,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             let searchResult = searchResults[indexPath.row]
             
             if let imageUrl = searchResult.getImageUrl() {
-                cell.posterImageView.af.setImage(withURL: imageUrl)
+                cell.posterImageView.loadImage(url: imageUrl)
             }
             
             cell.nameLabel.text = searchResult.title
