@@ -63,7 +63,7 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.favsumLabel.text = favAnime.value(forKeyPath: "synopsis") as? String
         if let poster = favAnime.value(forKey: "poster") as? String{
             let posterUrl = URL(string: poster)!
-            cell.favposterView.af.setImage(withURL: posterUrl)
+            cell.favposterView.loadImage(url: posterUrl)
 
         }
         
