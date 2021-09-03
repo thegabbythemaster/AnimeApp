@@ -5,6 +5,7 @@
 //  Created by Gabby Gonzalez on 5/4/21.
 //
 
+import AlamofireImage
 import UIKit
 import CoreData
 

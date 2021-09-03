@@ -3,6 +3,7 @@
 //  AnimeApp
 //
 //  Created by Gabby Gonzalez on 3/18/21.
+//hi future me if you are looking at this
 //
 
 import UIKit
@@ -64,9 +65,8 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
         if let poster = favAnime.value(forKey: "poster") as? String{
             let posterUrl = URL(string: poster)!
             cell.favposterView.loadImage(url: posterUrl)
-
         }
-        
+    
         return cell
     }
   
@@ -114,3 +114,4 @@ class FavAnimeViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
 }
+
